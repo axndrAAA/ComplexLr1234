@@ -146,6 +146,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AeroAnglesAndCoef.h" />
     <ClInclude Include="Ecranoplan.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>

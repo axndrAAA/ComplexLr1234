@@ -66,7 +66,7 @@ namespace CppCLR_WinformsProjekt {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"start";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
@@ -88,12 +88,13 @@ namespace CppCLR_WinformsProjekt {
 		if (!fout) { cout << "Ошибка открытия файла" << endl;  system("pause"); }
 		fout.setf(ios::fixed);
 
-		TDormanPrinceIntegrator integr(1e-12);
+		TDormanPrinceIntegrator integr(1e-2);
 		double T0 = 0.0;
 		//double T1 = 11 * 60 * 60 + 15 * 60;
+		double smplInc = 0.1;
 		double T1 = 20;
 
-		Ecranoplan model(T0, T1);
+		Ecranoplan model(T0, T1,smplInc);
 		integr.Run(model);
 		for (int i = 0; i < model.Result.size(); i++)
 		{
